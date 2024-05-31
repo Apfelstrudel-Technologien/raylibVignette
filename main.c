@@ -15,6 +15,7 @@ int main(void)
 
     int rLoc = GetShaderLocation(shader, "radius");
     int blurLoc = GetShaderLocation(shader, "blur");
+
     int colLoc = GetShaderLocation(shader, "color");
 
     // Radius and blur.
@@ -41,6 +42,7 @@ int main(void)
         SetShaderValue(shader, blurLoc, &blur, SHADER_UNIFORM_FLOAT);
         SetShaderValue(shader, colLoc, &vColor, SHADER_UNIFORM_VEC3);
 
+        // Begin.
         BeginDrawing();
 
         ClearBackground(WHITE);
