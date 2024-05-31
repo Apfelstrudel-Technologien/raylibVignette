@@ -1,3 +1,5 @@
+// Vignette shader by Apfelstrudel Technologien.
+
 #include "raylib.h"
 
 int main(void)
@@ -15,10 +17,12 @@ int main(void)
     int blurLoc = GetShaderLocation(shader, "blur");
     int colLoc = GetShaderLocation(shader, "color");
 
+    // Radius and blur.
     float radius = 0.5f;
+
     float blur = 0.1f;
 
-    Vector3 vColor = {1.0f, 0.2f, 0.4f}; // Vignette color.
+    Vector3 vColor = {0.5f, 0.5f, 0.5f}; // Vignette color.
 
     RenderTexture2D vTexture = LoadRenderTexture(winW, winH); // Vignette texture.
 
