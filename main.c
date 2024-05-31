@@ -40,6 +40,7 @@ int main(void)
 
         SetShaderValue(shader, rLoc, &radius, SHADER_UNIFORM_FLOAT);
         SetShaderValue(shader, blurLoc, &blur, SHADER_UNIFORM_FLOAT);
+
         SetShaderValue(shader, colLoc, &vColor, SHADER_UNIFORM_VEC3);
 
         // Begin.
@@ -49,11 +50,14 @@ int main(void)
 
         // Draw vignette.
         BeginShaderMode(shader);
+
         DrawTextureRec(vTexture.texture, (Rectangle){ 0, 0, vTexture.texture.width, -vTexture.texture.height }, (Vector2){ 0, 0 }, BLANK);
+
         EndShaderMode();
 
         // Some information.
         DrawText(TextFormat("Radius: %.2f", radius), 10, 10, 20, BLACK);
+
         DrawText(TextFormat("Blur: %.2f", blur), 10, 40, 20, BLACK);
 
         DrawText("Use arrow keys to adjust radius and blur", 10, 70, 20, BLACK);
